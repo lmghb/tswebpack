@@ -1,0 +1,12 @@
+# Node 
+node_modules
+
+# Tests
+
+# Build assets
+public/build
+public/index.html
+
+# IDE
+.alm
+.vscode
