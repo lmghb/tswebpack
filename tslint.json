@@ -1,0 +1,49 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended",
+        "tslint-eslint-rules"
+    ],
+    "jsRules": {},
+    "rules": {
+        // https://palantir.github.io/tslint/rules/
+        "ordered-imports": true,
+        "member-access": true,
+        "max-line-length": false,
+        "no-console": false,
+        "class-name": false,
+        "arrow-parens": false,
+        "no-shadowed-variable": false,
+        "quotemark": [
+            true,
+            "single"
+        ],
+        //"interface-name": [true, "never-prefix"],
+        "interface-name": false,
+        "no-bitwise": false,
+        "max-classes-per-file": false,
+        "no-empty-interface": false,
+        "prefer-const": false,
+        "no-empty": false,
+        "variable-name": [
+            true,
+            "ban-keywords",
+            "check-format",
+            "allow-leading-underscore",
+            "require-const-for-all-caps",
+            "allow-pascal-case"
+        ],
+        // "no-magic-numbers": true
+        "ban-comma-operator": true,
+        "no-duplicate-imports": true,
+        "no-duplicate-switch-case": true,
+        "no-invalid-this": true,
+        "no-null-keyword": true,
+        // tslint-eslint-rules:
+        "ter-indent": [
+            true,
+            2
+        ]
+    },
+    "rulesDirectory": []
+}
