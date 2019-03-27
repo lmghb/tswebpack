@@ -1,4 +1,6 @@
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 /*
  * SplitChunksPlugin is enabled by default and replaced
@@ -21,14 +23,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
  *
  */
 
-// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-
 module.exports = {
 	entry: {
 		main: './src/index.ts'
 	},
 
 	plugins: [
+		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			template: 'src/templates/index.html'
 		}),
@@ -69,5 +70,11 @@ module.exports = {
 
 	optimization: {
 		noEmitOnErrors: true,
+		minimizer: [
+			new UglifyJsPlugin({
+				extractComments: true,
+				// sourceMap: true
+			})
+		]
 	}
 };
