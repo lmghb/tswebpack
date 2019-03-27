@@ -4,8 +4,7 @@ node_modules
 # Tests
 
 # Build assets
-public/build
-public/index.html
+dist
 
 # IDE
 .alm

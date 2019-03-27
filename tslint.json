@@ -39,6 +39,8 @@
         "no-duplicate-switch-case": true,
         "no-invalid-this": true,
         "no-null-keyword": true,
+        "semicolon": true,
+
         // tslint-eslint-rules:
         "ter-indent": [
             true,
