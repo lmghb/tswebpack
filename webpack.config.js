@@ -1,6 +1,8 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const CssTypingsGenerator = require('typescript-plugin-css-modules');
+// const CssTypingsGenerator = require('typed-css-modules');
 
 /*
  * SplitChunksPlugin is enabled by default and replaced
@@ -25,7 +27,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 	entry: {
-		main: './src/index.ts'
+		main: './src/app/index.ts'
 	},
 
 	plugins: [
@@ -37,11 +39,29 @@ module.exports = {
 
 	module: {
 		rules: [
+			// https://webpack.js.org/concepts/loaders
 			{
-				loader: 'ts-loader',
 				test: /\.tsx?$/,
+				loader: 'ts-loader',
 				exclude: /node_modules/
-			}
+			},
+			{
+				test: /\.css$/,
+				use: [
+					'style-loader',
+					{
+						loader: 'css-loader',	// 'css-loader/url' refers css as separate files
+						options: {
+							modules: true,
+							namedExport: true,
+							camelCase: true,
+							// localIdentName: '[local]',
+							// sourceMap: true,
+							// exportOnlyLocals: false
+						}
+					}
+				],
+			},
 		]
 	},
 
@@ -49,11 +69,11 @@ module.exports = {
 		path: __dirname + '/dist',
 		//chunkFilename: '[name].[chunkhash].js',
 		//filename: 'build/[name].[chunkhash].js'
-		filename: '[name].[chunkhash].js'
+		filename: '[name].[hash].js'
 	},
 
 	resolve: {
-		extensions: [ '.ts', '.tsx', '.js' ]
+		extensions: [ '.ts', '.tsx', '.js', '.css' ]
 	},
 
 	devServer: {

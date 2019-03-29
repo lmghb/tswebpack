@@ -1,8 +1,9 @@
 import _ from 'lodash';
+import * as styles from '../styles/index1.css';
 
 export function component() {
   let element = document.createElement('div');
-
+  element.className = styles.someNeededClass;
   let button = document.createElement('button');
   let br = document.createElement('br');
 

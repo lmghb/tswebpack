@@ -9,11 +9,14 @@
   },
   "devDependencies": {
     "clean-webpack-plugin": "^2.0.1",
+    "css-loader": "^1.0.1",
     "html-webpack-plugin": "^3.2.0",
     "npm-check-updates": "^3.1.1",
+    "style-loader": "^0.23.1",
     "ts-loader": "^5.3.3",
     "tslint": "^5.14.0",
     "tslint-eslint-rules": "^5.4.0",
+    "typed-css-modules": "^0.4.2",
     "typescript": "^3.3.4000",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.29.6",
@@ -21,9 +24,10 @@
     "webpack-dev-server": "3.1.14"
   },
   "scripts": {
+    "css:typings": "tcm src --camelCase",
     "build": "webpack -p --progress",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server -d"
+    "start": "npm run css:typings && webpack-dev-server -d"
   },
   "author": "Łukasz Majta",
   "license": "MIT"

@@ -6,6 +6,9 @@ node_modules
 # Build assets
 dist
 
+# Typings
+src/styles/*.css.d.ts
+
 # IDE
 .alm
 .vscode

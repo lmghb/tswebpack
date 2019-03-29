@@ -58,7 +58,7 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
     /* Diagnostics */
     // "listFiles": true,
-    "listEmittedFiles": true,
+    "listEmittedFiles": true
   },
   "include": [
     "src"
