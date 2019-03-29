@@ -25,9 +25,9 @@
   },
   "scripts": {
     "css:typings": "tcm src --camelCase",
-    "build": "webpack -p --progress",
+    "build": "npm run css:typings && webpack -p --progress",
     "watch": "webpack --watch",
-    "start": "npm run css:typings && webpack-dev-server -d"
+    "start": "webpack-dev-server -d"
   },
   "author": "Łukasz Majta",
   "license": "MIT"

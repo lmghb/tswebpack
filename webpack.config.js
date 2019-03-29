@@ -50,11 +50,11 @@ module.exports = {
 				use: [
 					'style-loader',
 					{
-						loader: 'css-loader',	// 'css-loader/url' refers css as separate files
+						loader: 'css-loader',
 						options: {
-							modules: true,
-							namedExport: true,
-							camelCase: true,
+						modules: true,
+						namedExport: true,
+						 	camelCase: true,
 							// localIdentName: '[local]',
 							// sourceMap: true,
 							// exportOnlyLocals: false
